@@ -1,0 +1,7 @@
+@import "normalize.css";
+
+:root {
+  --background-home-navbar: linear-gradient(to right, #FD8F00 , #FE4F00);
+  --title-size: 16px;
+}
+
