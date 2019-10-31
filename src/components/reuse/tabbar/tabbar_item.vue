@@ -26,7 +26,7 @@
     },
     methods: {
       goto() {
-        this.$router.push(this.url)
+        if (!this.isactived) this.$router.push(this.url)
       }
     },
     computed: {
@@ -44,7 +44,7 @@
     margin-top: 3px;
   }
 
-  #icon span:before{
+  #icon i:before{
     font-size: 180%;
     vertical-align: -30%;
   }

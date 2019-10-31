@@ -3,5 +3,12 @@
 :root {
   --background-home-navbar: linear-gradient(to right, #FD8F00 , #FE4F00);
   --title-size: 16px;
+  --font-color: #FF5600
+}
+
+ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
