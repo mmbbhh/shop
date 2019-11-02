@@ -31,6 +31,10 @@
       this.scroll.on('pullingUp', () => {
         this.$emit('pullup')
       })
+
+      this.scroll.on('pullingDown', () => {
+        this.$emit('pulldown')
+      })
     },
     methods: {
       scrollTo(x, y, time=500) {
@@ -38,6 +42,9 @@
       },
       finishpullup() {
         this.scroll.finishPullUp()
+      },
+      finishpulldown() {
+        this.scroll.finishPullDown()
       },
       refresh() {
         this.scroll.refresh()

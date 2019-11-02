@@ -13,9 +13,7 @@
       <RecommendView :recommends="recommends"></RecommendView>
       <news :view="view"></news>
       <tabcontrol :title="['流行','新款','精选']" @tabclick="goods_change" ref="tabcontrol1"></tabcontrol>
-      <goodslist :goods="selected">
-        <goodsitem></goodsitem>
-      </goodslist>
+      <goodslist :goods="selected"></goodslist>
     </scroll>
 
     <backtop @click.native="totop()" v-show="ifshow"></backtop>

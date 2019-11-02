@@ -1,5 +1,5 @@
 <template>
-  <div id="mygoods">
+  <div id="mygoods" @click="goods_click()">
     <img :src="goodsitem.list_pic_url" alt="" @load="finishload()">
     <div class="goods-info">
       <p>{{goodsitem.name}}</p>
@@ -19,6 +19,9 @@
     methods: {
       finishload() {
         this.Bus.$emit('finishload')
+      },
+      goods_click() {
+        this.$router.push('/detail/' + this.goodsitem.id)
       }
     }
   }

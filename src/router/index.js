@@ -23,6 +23,14 @@ const routes = [
   {
     path: '/profile',
     component: () => import('pages/profile/profile')
+  },
+  {
+    path: '/detail/:id',
+    component: () => import('pages/detail/detail')
+  },
+  {
+    path: '/emptyPage',
+    component: () => import('components/reuse/emptyPage/emptyPage')
   }
 ]
 

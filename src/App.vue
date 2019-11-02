@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <keep-alive>
+    <keep-alive exclude="detail">
       <router-view></router-view>
     </keep-alive>
-    <tabbar></tabbar>
+    <tabbar v-show="isshow"></tabbar>
   </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
   name: 'app',
   components: {
     tabbar: () => import('components/content/tabbar/mytabbar')
+  },
+  computed: {
+    isshow() {
+      return this.$route.path.indexOf('home') != -1 || this.$route.path.indexOf('category') != -1 || this.$route.path.indexOf('shopcart') != -1 || this.$route.path.indexOf('profile') != -1
+    }
   }
 }
 </script>
