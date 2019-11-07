@@ -1,5 +1,5 @@
 <template>
-  <div id="goods">
+  <div class="goods">
     <goodsitem v-for="item in goods" :goodsitem="item"/>
   </div>
 </template>
@@ -19,7 +19,7 @@
 </script>
 
 <style scoped>
-  #goods {
+  .goods {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

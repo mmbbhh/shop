@@ -2,6 +2,8 @@
 
 :root {
   --background-home-navbar: linear-gradient(to right, #FD8F00 , #FE4F00);
+  --background-button1: linear-gradient(to left, #FE8B08 , #FDD122);
+  --background-button2: linear-gradient(to right, #FD5728 , #FE0040);
   --title-size: 16px;
   --font-color: #FF5600
 }
@@ -11,4 +13,7 @@ ul li {
   margin: 0;
   list-style: none;
 }
+
+/*防止使用fastclick报错*/
+*{ touch-action: none; }
 

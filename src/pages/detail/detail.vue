@@ -19,12 +19,17 @@
       </div>
       <detail_list :goods="random_goods.data"></detail_list>
     </scroll>
+
+    <backtop @click.native="totop()" v-show="ifshow"></backtop>
+
+    <detail_tabbar @addcart="addtocart()"></detail_tabbar>
   </div>
 </template>
 
 <script>
   import {goods_detail, info} from "network/detail"
-  import {random} from "../../network/detail";
+  import {random} from "network/detail";
+  import {backtop_mixin} from "tools/mixins";
 
   export default {
     name: "detail",
@@ -33,7 +38,8 @@
       scroll: () => import('components/reuse/scroll/scroll'),
       goodsinfo: () => import('./etc/detail_info'),
       goods_desc: () => import('./etc/goods_desc'),
-      detail_list: () => import('components/content/goods/goodslist')
+      detail_list: () => import('components/content/goods/goodslist'),
+      detail_tabbar: () => import('./etc/detail_tabbar')
     },
     data() {
       return {
@@ -49,12 +55,11 @@
         },
         //navbar跳转的具体位置
         location: [0, 0, 0, Number.MAX_VALUE],
-        //当前位置
-        now_loc: 0,
         //选中的navbar选项
         index: 0
       }
     },
+    mixins: [backtop_mixin],
     //防止详情页内部跳转时不刷新
     watch: {
       $route(to,from) {
@@ -99,6 +104,13 @@
         this.location[2] = this.$refs.recommend.offsetTop
         const now = -position.y
         let length = this.location.length
+
+        if(now > 666) {
+          this.ifshow = true
+        }else{
+          this.ifshow = false
+        }
+
         for (let i = 0; i < length; i++) {
           /*if (i != this.index
             && ((i < length-1 && now >= this.location[i] && now < this.location[i+1])
@@ -110,6 +122,23 @@
             this.$refs.detail_navbar.choose = i
           }
         }
+      },
+
+      //添加商品到store
+      addtocart() {
+        const product = {
+          id: this.goods.id,
+          name: this.goods.name,
+          describe: this.goods.goods_brief,
+          price: this.goods.retail_price,
+          img: this.goods.primary_pic_url,
+          num: 1,
+          check: true
+        }
+        //弹出toast
+        this.$store.dispatch('addtocart', product).then(res => {
+          this.$toast.show(res)
+        })
       }
     }
   }
@@ -132,7 +161,7 @@
 
   .content {
     margin-top: 48px;
-    height: calc(100% - 48px);
+    height: calc(100% - 48px - 49px);
   }
 
   .related {

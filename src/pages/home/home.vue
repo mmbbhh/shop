@@ -42,10 +42,10 @@
         },
         //当前选择的类别
         now_show: 'pop',
-        //返回顶部按钮是否显示
-        ifshow: false,
         //保存tabcontrol的位置
         tabcontrollocation: 0,
+        //返回顶部按钮是否显示
+        ifshow: false,
         //tabcontrol是否吸顶
         tabcontroltop: false,
         //保留离开时的滚动位置
@@ -165,12 +165,13 @@
     background-image: var(--background-home-navbar);
     color: #FFFFFF;
     font-size: var(--title-size);
+    font-weight: 600;
   }
 
   .toptabcontrol{
     width: 100%;
     position: fixed;
-    top: 44px;
+    top: 43px;
     z-index: 999;
   }
 

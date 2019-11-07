@@ -1,3 +1,4 @@
+//防抖
 export function debounce(fnc, delay) {
   let time = null
   return function (args) {

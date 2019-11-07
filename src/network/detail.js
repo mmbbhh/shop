@@ -5,7 +5,7 @@ export function goods_detail(id) {
     url: '/goods/detail',
     params: {
       id
-    }
+    },
   })
 }
 

@@ -1,6 +1,6 @@
 <template>
   <div id="recommend">
-    <div v-for="(item,index) in recommends" class="item">
+    <div v-for="(item,index) in recommends" :key="index" class="item">
       <img :src="item.imgUrl" alt="" @click="goto(index)">
       <div>{{item.title}}</div>
     </div>
