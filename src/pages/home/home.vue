@@ -60,7 +60,6 @@
       news: () => import('pages/home/etc/news'),
       tabcontrol: () => import('components/content/tabcontrol/tabcontrol'),
       goodslist: () => import('components/content/goods/goodslist'),
-      goodsitem: () => import('components/content/goods/goodsitem'),
       scroll: () => import('components/reuse/scroll/scroll'),
       backtop: () => import('components/content/backtop/backtop')
     },

@@ -15,7 +15,7 @@
           <i class="fa fa-circle-o fa-fw" style="padding: 0 12px;" v-show="!confirmd"></i><i class="fa fa-check fa-fw" style="padding: 0 12px;" v-show="confirmd"></i><input placeholder="请确认您的密码" type="password" v-model="confirm">
         </div>
         <div class="content">
-          <i class="fa fa-phone fa-fw" style="padding: 0 12px;"></i><input placeholder="请输入您的手机号" type="text" v-model="tele">
+          <i class="fa fa-phone fa-fw" style="padding: 0 12px;"></i><input placeholder="请输入您的手机号" type="test" :οninput="this.tele=this.tele.replace(/[^\d]/g,'')" v-model="tele">
         </div>
         <div class="sexselect">
           <div class="sex" @click="s_male()" :class="{'chosed': male}">
@@ -59,8 +59,36 @@
           this.$toast.show('请填写完整的信息')
         } else if (!this.confirmd) {
           this.$toast.show('请确认两次输入的密码一致')
-        } else if (this.male == false && this.male == false) {
+        } else if (this.password.length <= 6 || this.password.length > 12) {
+          this.$toast.show('密码长度为7~12')
+        } else if (this.tele.length != 11) {
+          this.$toast.show('请输入11位手机号')
+        } else if (this.male == false && this.female == false) {
           this.$toast.show('请选择您的性别')
+        } else {
+          if (this.male == false) {
+            login_resign.resign(this.user, this.password, '女', this.tele).then(res => {
+              if (res.data.state == 1) {
+                this.$toast.show(res.data.message)
+                this.$emit('change')
+              } else {
+                this.$toast.show(res.data.message)
+                this.password = ''
+                this.confirm = ''
+              }
+            })
+          } else {
+            login_resign.resign(this.user, this.password, '男', this.tele).then(res => {
+              if (res.data.state == 1) {
+                this.$toast.show(res.data.message)
+                this.$emit('change')
+              } else {
+                this.$toast.show(res.data.message)
+                this.password = ''
+                this.confirm = ''
+              }
+            })
+          }
         }
       },
       s_male() {

@@ -73,7 +73,6 @@
         this.goods = res.data
         this.detail_info = new info(res.data)
       })
-
       //获取推荐商品
       this.get_recommend()
     },

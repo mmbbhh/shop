@@ -22,11 +22,55 @@ export class info {
   }
 }
 
+//获取推荐商品
 export function random(page) {
   return request({
     url: '/goods/random',
     params: {
       page
+    }
+  })
+}
+
+//判断是否为收藏
+export function collect(user, id) {
+  return request({
+    url: '/goods/collect',
+    params: {
+      user,
+      id
+    }
+  })
+}
+
+//确认收藏
+export function like(user, id) {
+  return request({
+    url: '/goods/like',
+    params: {
+      user,
+      id
+    }
+  })
+}
+
+//取消收藏
+export function dislike(user, id) {
+  return request({
+    url: '/goods/dislike',
+    params: {
+      user,
+      id
+    }
+  })
+}
+
+//获取所有收藏的商品
+export function collection(user) {
+  return request({
+    url: '/goods/collection',
+    params: {
+      user
     }
   })
 }

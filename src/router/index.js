@@ -31,6 +31,14 @@ const routes = [
   {
     path: '/emptyPage',
     component: () => import('components/reuse/emptyPage/emptyPage')
+  },
+  {
+    path: '/setting',
+    component: () => import('pages/setting/setting')
+  },
+  {
+    path: '/collect',
+    component: () => import('pages/profile/etc/user_collect')
   }
 ]
 

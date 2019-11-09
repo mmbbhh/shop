@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="shopcart">
     <shopcart_navbar class="navbar">
       <div slot="mid">购物车({{cartlength}})</div>
     </shopcart_navbar>

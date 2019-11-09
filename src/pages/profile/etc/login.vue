@@ -9,11 +9,11 @@
           <i class="fa fa-envelope-o fa-fw" style="padding: 0 12px;"></i><input placeholder="请输入用户名" type="text" v-model="user">
         </div>
         <div class="content">
-          <i class="fa fa-key fa-fw" style="padding: 0 12px;"></i><input placeholder="请输入密码" type="text" v-model="password">
+          <i class="fa fa-key fa-fw" style="padding: 0 12px;"></i><input placeholder="请输入密码" type="password" v-model="password">
         </div>
       </div>
       <div class="resign">
-        <span>点击注册</span>
+        <span @click="change()">点击注册</span>
       </div>
       <div class="button" @click="tologin()">
         <span>登录</span>
@@ -49,6 +49,9 @@
             }
           })
         }
+      },
+      change() {
+        this.$emit('change')
       }
     }
   }

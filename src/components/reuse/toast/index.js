@@ -12,8 +12,6 @@ obj.install = function (Vue) {
   //显示组件
   document.body.appendChild(toast.$el)
 
-  console.log(toast.$el);
-
   Vue.prototype.$toast = toast
 }
 

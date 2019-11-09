@@ -26,6 +26,9 @@ const mutations = {
   //登录操作
   login(state, payload) {
     state.user = payload
+  },
+  loginout(state, payload) {
+    state.user = ''
   }
 }
 

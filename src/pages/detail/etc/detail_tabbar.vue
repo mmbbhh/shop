@@ -14,7 +14,8 @@
         </div>
       </div>
       <div class="a">
-        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star" style="color: #FDC11C" v-if="collected" @click="dislike()"></i>
+        <i class="fa fa-star-o" v-if="!collected" @click="like()"></i>
         <div class="text">
           收藏
         </div>
@@ -32,12 +33,54 @@
 </template>
 
 <script>
+  import {collect,like,dislike} from "network/detail";
+
   export default {
     name: "detail_tabbar",
+    data() {
+      return {
+        collected: false
+      }
+    },
     methods: {
       addcart() {
         this.$emit('addcart')
+      },
+      //收藏
+      like() {
+        if (this.$store.getters.iflogin) {
+          like(this.$store.state.user, this.$route.params.id).then(res => {
+            if (res.data.state == 1) {
+              this.collected = true
+            } else {
+              this.$toast.show(res.data.message)
+            }
+          })
+        } else {
+          this.$toast.show('请先登录')
+        }
+      },
+      //取消收藏
+      dislike() {
+        if (this.$store.getters.iflogin) {
+          dislike(this.$store.state.user, this.$route.params.id).then(res => {
+            if (res.data.state == 1) {
+              this.collected = false
+            } else {
+              this.$toast.show(res.data.message)
+            }
+          })
+        } else {
+          this.$toast.show('请先登录')
+        }
       }
+    },
+    mounted() {
+      collect(this.$store.state.user, this.$route.params.id).then(res => {
+        if (res.data.state == 1) {
+          this.collected = true
+        }
+      })
     }
   }
 </script>
