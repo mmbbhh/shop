@@ -39,6 +39,10 @@ const routes = [
   {
     path: '/collect',
     component: () => import('pages/profile/etc/user_collect')
+  },
+  {
+    path: '/order',
+    component: () => import('pages/profile/etc/user_order')
   }
 ]
 

@@ -29,6 +29,15 @@ const mutations = {
   },
   loginout(state, payload) {
     state.user = ''
+  },
+  //删除所有选中商品
+  deleteselect(state) {
+    for (let i = 0; i < state.cartlist.length; i++) {
+      if (state.cartlist[i].check) {
+        state.cartlist.splice(i, 1)
+        i--
+      }
+    }
   }
 }
 

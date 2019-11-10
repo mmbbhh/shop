@@ -22,14 +22,17 @@
 
     <backtop @click.native="totop()" v-show="ifshow"></backtop>
 
-    <detail_tabbar @addcart="addtocart()"></detail_tabbar>
+    <detail_tabbar @addcart="addtocart()" @buy="buy()"></detail_tabbar>
+
+    <buy_check v-if="ifbuy" @yes="accept()" @no="concel()"></buy_check>
   </div>
 </template>
 
 <script>
   import {goods_detail, info} from "network/detail"
   import {random} from "network/detail";
-  import {backtop_mixin} from "tools/mixins";
+  import {backtop_mixin, buy_check_mixin} from "tools/mixins";
+  import {buy} from 'network/buygoods'
 
   export default {
     name: "detail",
@@ -39,7 +42,8 @@
       goodsinfo: () => import('./etc/detail_info'),
       goods_desc: () => import('./etc/goods_desc'),
       detail_list: () => import('components/content/goods/goodslist'),
-      detail_tabbar: () => import('./etc/detail_tabbar')
+      detail_tabbar: () => import('./etc/detail_tabbar'),
+      buy_check: () => import('components/content/buy_check/buy_check')
     },
     data() {
       return {
@@ -59,7 +63,7 @@
         index: 0
       }
     },
-    mixins: [backtop_mixin],
+    mixins: [backtop_mixin, buy_check_mixin],
     //防止详情页内部跳转时不刷新
     watch: {
       $route(to,from) {
@@ -137,6 +141,23 @@
         //弹出toast
         this.$store.dispatch('addtocart', product).then(res => {
           this.$toast.show(res)
+        })
+      },
+
+      //购买按钮
+      buy() {
+        this.ifbuy = true
+      },
+
+      //弹窗确认
+      accept() {
+        buy(this.$store.state.user, this.$route.params.id, 1).then(res => {
+          if (res.data.state == 1) {
+            this.$toast.show('购买成功！')
+            this.ifbuy = false
+          } else {
+            this.$toast.show(res.data.message)
+          }
         })
       }
     }

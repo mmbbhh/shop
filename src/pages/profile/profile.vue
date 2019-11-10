@@ -3,11 +3,11 @@
     <mlogin v-show="!iflogin && state" @change="statechange()"/>
     <mresign v-show="!iflogin && !state" @change="statechange()"/>
     <nowuser v-show="iflogin"/>
-    <row v-show="iflogin" @click.native="goto()">
+    <row v-show="iflogin" @click.native="goto_collection()">
       <i class="fa fa-star" slot="left"></i>
       <div slot="mid">我的收藏</div>
     </row>
-    <row v-show="iflogin">
+    <row v-show="iflogin" @click.native="goto_order()">
       <i class="fa fa-plane" slot="left"></i>
       <div slot="mid">我的订单</div>
     </row>
@@ -47,8 +47,11 @@
       statechange() {
         this.state = !this.state
       },
-      goto() {
+      goto_collection() {
         this.$router.push('/collect')
+      },
+      goto_order() {
+        this.$router.push('/order')
       }
     }
   }

@@ -74,3 +74,13 @@ export function collection(user) {
     }
   })
 }
+
+//获取所有订单
+export function order(user) {
+  return request({
+    url: '/goods/order',
+    params: {
+      user
+    }
+  })
+}

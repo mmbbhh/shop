@@ -1,6 +1,6 @@
 <template>
   <div id="news">
-    <a :href="view.link">
+    <a href="#">
       <img :src="view.imgUrl" alt="">
     </a>
   </div>

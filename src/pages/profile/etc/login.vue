@@ -59,7 +59,7 @@
 
 <style scoped>
   #login {
-    background: url('http://127.0.0.1:3000/images/login/background.jpeg') no-repeat center top;
+    background: url('../../../assets/img/background.jpeg') no-repeat center top;
     background-size: 100%;
     height: 100vh;
     display: flex;
@@ -83,7 +83,7 @@
     height: 210px;
     content: '';
     position: absolute;
-    background-image: url('http://127.0.0.1:3000/images/login/background.jpeg');
+    background-image: url('../../../assets/img/background.jpeg');
     background-position: center top;
     background-size: cover;
     background-attachment: fixed;

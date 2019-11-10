@@ -42,6 +42,12 @@
       payfor() {
         if (this.totalprice == 0) {
           this.$toast.show('请至少选择一件商品')
+        } else {
+          if (this.$store.getters.iflogin) {
+            this.$emit('buy')
+          } else {
+            this.$toast.show('请先登录')
+          }
         }
       }
     }

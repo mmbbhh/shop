@@ -1,4 +1,5 @@
 import backtop from "components/content/backtop/backtop";
+import buy_check from "components/content/buy_check/buy_check";
 
 //backtop按钮封装混入
 export const backtop_mixin = {
@@ -14,6 +15,25 @@ export const backtop_mixin = {
   methods: {
     totop() {
       this.$refs.detail_scroll.scrollTo(0, 0, 400)
+    }
+  }
+}
+
+//购买确认弹窗
+export const buy_check_mixin = {
+  components: {
+    buy_check
+  },
+  data() {
+    return {
+      //购买确认弹窗是否显示
+      ifbuy: false
+    }
+  },
+  methods: {
+    //弹窗取消
+    concel() {
+      this.ifbuy = false
     }
   }
 }

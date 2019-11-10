@@ -2,13 +2,13 @@
   <div id="detail_tabbar">
     <div class="left">
       <div class="a">
-        <i class="fa fa-shopping-bag"></i>
+        <i class="fa fa-shopping-bag" @click="none()"></i>
         <div class="text">
           店铺
         </div>
       </div>
       <div class="a">
-        <i class="fa fa-comments-o"></i>
+        <i class="fa fa-comments-o" @click="none()"></i>
         <div class="text">
           客服
         </div>
@@ -25,7 +25,7 @@
       <div class="right_s" @click="addcart()">
         <span>加入购物车</span>
       </div>
-      <div class="right_b">
+      <div class="right_b" @click="buy()">
         <span>立刻购买</span>
       </div>
     </div>
@@ -52,6 +52,7 @@
           like(this.$store.state.user, this.$route.params.id).then(res => {
             if (res.data.state == 1) {
               this.collected = true
+              this.$toast.show('收藏成功')
             } else {
               this.$toast.show(res.data.message)
             }
@@ -66,6 +67,7 @@
           dislike(this.$store.state.user, this.$route.params.id).then(res => {
             if (res.data.state == 1) {
               this.collected = false
+              this.$toast.show('取消收藏成功')
             } else {
               this.$toast.show(res.data.message)
             }
@@ -73,6 +75,17 @@
         } else {
           this.$toast.show('请先登录')
         }
+      },
+      //购买
+      buy() {
+        if (this.$store.getters.iflogin) {
+          this.$emit('buy')
+        } else {
+          this.$toast.show('请先登录')
+        }
+      },
+      none() {
+        this.$toast.show('尚未实现')
       }
     },
     mounted() {
