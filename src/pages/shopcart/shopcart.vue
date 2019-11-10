@@ -51,9 +51,9 @@
 
 <style scoped>
   .navbar {
-    background: #FE4F00;
+    background-image: var(--background-home-navbar);;
     color: #FFFFFF;
-    font-weight: 800;
+    font-weight: 600;
   }
 
   .cartlist {

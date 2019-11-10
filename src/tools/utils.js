@@ -8,3 +8,14 @@ export function debounce(fnc, delay) {
     }, delay)
   }
 }
+
+//去重
+export function unique(ary) {
+  let newAry = [];
+  for (let i = 0; i<ary.length; i++) {
+    if (newAry.indexOf(ary[i]) === -1) {
+      newAry.push(ary[i]);
+    }
+  }
+  return newAry;
+}
