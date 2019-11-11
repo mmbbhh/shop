@@ -34,7 +34,7 @@ postcss-px-to-viewport实现px转化vw来保证不同分辨率的自适应
 
 #### Ps:
 
-数据库文件来源于开源项目，存在部分商品无介绍问题，尽请谅解
+数据库文件来源于开源项目，存在部分商品无介绍问题，尽请谅解。详见[后端项目](https://github.com/mmbbhh/shop_server)
 
 
 
