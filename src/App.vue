@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <keep-alive exclude="detail,checkedgoods">
+    <keep-alive exclude="detail,checkedgoods,user_collect,user_order,shopcart">
       <router-view></router-view>
     </keep-alive>
     <tabbar v-show="isshow"></tabbar>

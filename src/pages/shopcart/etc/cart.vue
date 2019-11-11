@@ -65,14 +65,14 @@
   }
 
   .img {
-    width: 32%;
+    height: 100%;
     flex: 1;
-    margin: 5px;
+    margin: 0 5px;
     line-height: 100px;
   }
 
   .img img {
-    width: 100%;
+    height: 100%;
     vertical-align: middle;
   }
 

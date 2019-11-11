@@ -8,7 +8,7 @@
     </navbar>
     <scroll class="content">
       <div class="tip" v-if="info.length == 0">
-        你没有收藏的商品哦
+        你没有任何订单哦
       </div>
       <div class="order" v-for="item in info">
         <div class="date"><span>{{item.date}}</span></div>
@@ -81,7 +81,7 @@
   .tip {
     text-align: center;
     font-size: 18px;
-    margin-top: 70px;
+    padding-top: 20px;
     color: #AAAAAA;
   }
 

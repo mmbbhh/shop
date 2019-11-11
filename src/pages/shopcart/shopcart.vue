@@ -1,6 +1,6 @@
 <template>
   <div id="shopcart">
-    <shopcart_navbar class="navbar">
+    <shopcart_navbar class="shopcart_navbar">
       <div slot="mid">购物车({{cartlength}})</div>
     </shopcart_navbar>
     <cartlist class="cartlist"/>
@@ -50,13 +50,9 @@
 </script>
 
 <style scoped>
-  .navbar {
+  .shopcart_navbar {
     background-image: var(--background-home-navbar);;
     color: #FFFFFF;
     font-weight: 600;
-  }
-
-  .cartlist {
-    margin-top: 44px;
   }
 </style>

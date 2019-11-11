@@ -11,7 +11,7 @@ module.exports = {
       minPixelValue: 1,//最小转换的px
       mediaQuery: false, //是否开启媒体查询
       selectorBlackList: ['goods'], //选中的"类"不进行自适应
-      exclude: [/tabbar/,/cartbuttonbar/] //以正则排除"组件"
+      exclude: [/tabbar/,/cartbuttonbar/,/cart/] //以正则排除"组件"
     }
   }
 }
