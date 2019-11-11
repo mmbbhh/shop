@@ -11,7 +11,7 @@
         ￥{{info.old_price}}
       </span>
       <div class="reson">
-        {{info.reason}}
+        <span>{{info.reason}}</span>
       </div>
     </div>
     <div class="sold">
@@ -66,10 +66,13 @@
     height: 20px;
     border-radius: 20px;
     text-align: center;
-    font-size: 5px;
+    font-size: 12px;
     color: #FFFFFF;
     line-height: 150%;
     align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .sold {
