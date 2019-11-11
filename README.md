@@ -6,7 +6,9 @@ webpack+vuecli3实现项目搭建，现已部署 地址：http://123.57.217.239
 
 ####功能演示
 
-
+![image](https://raw.githubusercontent.com/mmbbhh/shop/master/public/1.gif)
+![image](https://raw.githubusercontent.com/mmbbhh/shop/master/public/2.gif)
+![image](https://raw.githubusercontent.com/mmbbhh/shop/master/public/3.gif)
 
 ####主要技术
 活用组件化开发思想，将项目常用部分进行封装插槽，提升代码的复用性。
