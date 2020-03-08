@@ -42,7 +42,7 @@ postcss-px-to-viewport实现px转化vw来保证不同分辨率的自适应
 
 (vue-router以history模式打包后存在白屏问题，尚未解决因此改用hash模式)
 
-新后端地址:
+[新后端](https://github.com/mmbbhh/shop_server-remake-)
 
 
 
