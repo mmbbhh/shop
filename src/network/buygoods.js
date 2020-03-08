@@ -2,7 +2,7 @@ import {request} from './request'
 
 export function buy(user, id, num) {
   return request({
-    url: '/goods/buy',
+    url: '/order/add',
     params: {
       user,
       id,

@@ -27,7 +27,13 @@
     },
     mounted() {
       collection(this.$store.state.user).then(res => {
-        this.info = res.data
+        if (res.data.state == 1) {
+          this.info = res.data.data
+        } else {
+          this.$toast.show('登录失效')
+          this.$store.commit('login', '')
+          this.$router.push('/profile')
+        }
       })
     },
     components: {

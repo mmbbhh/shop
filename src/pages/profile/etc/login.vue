@@ -39,14 +39,19 @@
           this.$toast.show('请输入用户名或密码')
         } else {
           login_resign.login(this.user, this.password).then(res => {
-            if (res.data.state == 1) {
-              this.$toast.show(res.data.message)
-              this.$store.commit('login', res.data.user)
+            if (res != undefined && res.data.state == 200) {
+              this.$toast.show(res.data.msg)
+              this.$store.commit('login', res.data.message.username)
+              if (res.data.profile_img != 0) {
+                this.$store.commit('profile_img', res.data.profile_img)
+              }
             } else {
-              this.$toast.show(res.data.message)
+              this.$toast.show('登录失败')
               this.user = ''
               this.password = ''
             }
+          },err => {
+            console.log(err);
           })
         }
       },

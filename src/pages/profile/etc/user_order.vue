@@ -41,9 +41,12 @@
     },
     mounted() {
       order(this.$store.state.user).then(res => {
-        this.info = res.data
-        for (let i in this.info) {
-          this.info[i].date = this.info[i].date.substring(0, this.info[i].date.indexOf('T'))
+        if (res.data.state == 1) {
+          this.info = res.data.data
+        } else {
+          this.$toast.show('登录失效')
+          this.$store.commit('login', '')
+          this.$router.push('/profile')
         }
       })
     },

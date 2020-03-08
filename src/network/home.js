@@ -14,7 +14,7 @@ export function Recommend() {
 
 export function news() {
   return request({
-    url: '/home/news'
+    url: '/home/News'
   })
 }
 

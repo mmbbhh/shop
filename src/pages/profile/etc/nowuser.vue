@@ -5,7 +5,7 @@
       <div slot="right" class="fa fa-cogs setting" @click="config()"></div>
     </navbar>
     <!--<img src="@/assets/img/background.png" alt="">-->
-    <img class="head" src="@/assets/img/head.jpg" alt="">
+      <img class="head" :src="this.$store.state.profile_img_url" alt="profile_head">
     <div class="name">{{this.$store.state.user}}</div>
   </div>
 </template>

@@ -12,7 +12,8 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     cartlist: [],
-    user: ''
+    user: '',
+    profile_img_url: 'http://123.57.217.239:3000/newshop/static/head.jpg'
   },
   mutations,
   actions,

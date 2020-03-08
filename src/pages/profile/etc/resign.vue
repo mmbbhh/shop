@@ -72,7 +72,7 @@
                 this.$toast.show(res.data.message)
                 this.$emit('change')
               } else {
-                this.$toast.show(res.data.message)
+                this.$toast.show("账号已存在")
                 this.password = ''
                 this.confirm = ''
               }
@@ -80,10 +80,10 @@
           } else {
             login_resign.resign(this.user, this.password, '男', this.tele).then(res => {
               if (res.data.state == 1) {
-                this.$toast.show(res.data.message)
+                this.$toast.show("注册成功")
                 this.$emit('change')
               } else {
-                this.$toast.show(res.data.message)
+                this.$toast.show(res.data.msg)
                 this.password = ''
                 this.confirm = ''
               }

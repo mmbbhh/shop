@@ -9,7 +9,7 @@
 
 
     <scroll class="content" ref="scroll" :property="3" @location="show" @pullup="get_goods(now_show)">
-      <swiper :list="banner.list" @loadimgfinished="gettabcontrol()"></swiper>
+      <swiper :list="banner" @loadimgfinished="gettabcontrol()"></swiper>
       <RecommendView :recommends="recommends"></RecommendView>
       <news :view="view"></news>
       <tabcontrol :title="['流行','新款','精选']" @tabclick="goods_change" ref="tabcontrol1"></tabcontrol>

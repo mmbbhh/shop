@@ -53,8 +53,12 @@
             if (res.data.state == 1) {
               this.collected = true
               this.$toast.show('收藏成功')
-            } else {
+            } else if (res.data.state == 0){
               this.$toast.show(res.data.message)
+            } else {
+              this.$toast.show('登录失效')
+              this.$store.commit('login', '')
+              this.$router.push('/profile')
             }
           })
         } else {
@@ -68,8 +72,12 @@
             if (res.data.state == 1) {
               this.collected = false
               this.$toast.show('取消收藏成功')
-            } else {
+            } else if (res.data.store == 0){
               this.$toast.show(res.data.message)
+            } else {
+              this.$toast.show('登录失效')
+              this.$store.commit('login', '')
+              this.$router.push('/profile')
             }
           })
         } else {
@@ -89,11 +97,15 @@
       }
     },
     mounted() {
-      collect(this.$store.state.user, this.$route.params.id).then(res => {
-        if (res.data.state == 1) {
-          this.collected = true
-        }
-      })
+      if (this.$store.state.user != '') {
+        collect(this.$store.state.user, this.$route.params.id).then(res => {
+          if (res.data.state == 1) {
+            this.collected = true
+          } else if (res.data.state == 0) {
+            this.collected = false
+          }
+        })
+      }
     }
   }
 </script>

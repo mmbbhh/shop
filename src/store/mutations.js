@@ -38,6 +38,9 @@ const mutations = {
         i--
       }
     }
+  },
+  profile_img(state, payload) {
+    state.profile_img_url = payload;
   }
 }
 
