@@ -69,6 +69,7 @@ export const clearRequest = () => {
     store.state.cancelRequest.forEach((item) => {
       item()
     })
+    console.log(typeof store.state.cancelRequest[0])
     store.commit('clearCancel')
   }
 }

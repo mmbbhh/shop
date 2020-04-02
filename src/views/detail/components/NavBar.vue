@@ -28,7 +28,7 @@
         this.$emit('navbar_click', index)
       },
       previous() {
-        this.$router.back()
+        this.$router.go(-1)
       }
     },
     components: {

@@ -24,10 +24,6 @@ const routes = [
     component: () => import('views/detail/Detail.vue')
   },
   {
-    path: '/emptyPage',
-    component: () => import('components/reuse/emptyPage/EmptyPage.vue')
-  },
-  {
     path: '/setting',
     component: () => import('views/setting/Setting.vue')
   },

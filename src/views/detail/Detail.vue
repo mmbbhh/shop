@@ -70,7 +70,8 @@
     //防止详情页内部跳转时不刷新
     watch: {
       $route(to,from) {
-        this.$router.go(0)
+        this.$router.go(to.path)
+        this.$refs.detail_scroll.scrollTo(0, 0, 0)
       }
     },
     mounted() {
@@ -82,6 +83,15 @@
       })
       //获取推荐商品
       this.get_recommend()
+
+      //图片加载完毕刷新高度
+      const refrush = tools.debounce(() => {
+        //防止scroll没加载完就执行内部方法
+        this.$refs.detail_scroll && this.$refs.detail_scroll.refresh()
+      }, 200)
+      this.Bus.$on('finishload', () => {
+        refrush()
+      })
     },
     methods: {
       get_recommend() {
