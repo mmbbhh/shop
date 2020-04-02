@@ -7,7 +7,7 @@ import 'font-awesome/css/font-awesome.css'
 
 //AwesomeSwiper轮播插件
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import 'swiper/dist/css/swiper.css'
+import 'swiper/css/swiper.css'
 
 //导入vuex仓库
 import store from "./store";
@@ -23,8 +23,8 @@ Fastclick.attach(document.body)
 //vue图片懒加载插件
 import lazyload from "vue-lazyload";
 Vue.use(lazyload, {
-  loading: require('./assets/img/loading.png'),
-  error: require('./assets/img/error.png')
+  loading: require('./assets/images/loading.png'),
+  error: require('./assets/images/error.png')
 })
 
 Vue.use(VueAwesomeSwiper)

@@ -11,7 +11,7 @@
 export default {
   name: 'app',
   components: {
-    tabbar: () => import('components/content/tabbar/mytabbar')
+    tabbar: () => import('components/content/tabbar/MyTabBar')
   },
   computed: {
     isshow() {
@@ -22,5 +22,5 @@ export default {
 </script>
 
 <style>
-@import "assets/css/main.css";
+@import "style/main.css";
 </style>

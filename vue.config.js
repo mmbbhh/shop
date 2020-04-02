@@ -1,13 +1,19 @@
 module.exports = {
   publicPath:"./",
+  pages: {
+    index: {
+      entry: './src/main.js',
+    },
+  },
   configureWebpack: {
     resolve: {
       alias: {
         'asset': '@/asset',
         'components': '@/components',
-        'network': '@/network',
-        'pages': '@/pages',
-        'tools': '@/tools'
+        'service': '@/service',
+        'views': '@/views',
+        'utils': '@/utils',
+        'mixins': '@/mixins'
       }
     },
     performance: {

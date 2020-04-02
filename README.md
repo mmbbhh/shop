@@ -44,5 +44,7 @@ postcss-px-to-viewport实现px转化vw来保证不同分辨率的自适应
 
 [新后端](https://github.com/mmbbhh/shop_server-remake-)
 
+## 2020.4.2
 
+用typescript重构
 
