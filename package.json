@@ -12,7 +12,7 @@
     "core-js": "^3.3.2",
     "fastclick": "^1.0.6",
     "font-awesome": "^4.7.0",
-    "swiper": "^5.3.6",
+    "swiper": "^6.5.1",
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^4.1.0",
     "vue-class-component": "^7.2.3",
